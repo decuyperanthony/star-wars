@@ -13,6 +13,8 @@ import './App.css';
 import Login from './Login';
 import HomePage from './HomePage';
 
+const userToken = false;
+
 const App = () => (
   <div className="App">
     <Switch>
@@ -20,21 +22,21 @@ const App = () => (
         <Login />
       </Route>
 
-      {/* <Route
-          exact
-          path={`${path}/profile`}
-          render={(props) => {
-            if (!userToken) {
-              return <Redirect to="/" />;
-            }
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            return <Profile data={user} />;
-          }}
-        /> */}
+      <Route
+        exact
+        path="/"
+        render={(props) => {
+          if (!userToken) {
+            return <Redirect to="/login" />;
+          }
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          return <HomePage />;
+        }}
+      />
 
-      <Route path="/">
+      {/* <Route path="/">
         <HomePage />
-      </Route>
+      </Route> */}
     </Switch>
 
   </div>
