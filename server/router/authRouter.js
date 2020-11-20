@@ -5,6 +5,6 @@ const router = express.Router();
 const authController = require('../controllers/authController');
 
 //* === === === === ROUTE === === === ===
-// router.get('/', homeController.homeApi);
+router.post('/login', authController.loginAction);
 
 module.exports = router
