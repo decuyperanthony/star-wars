@@ -12,28 +12,31 @@ import './App.css';
 import Login from './Login';
 import HomePage from './HomePage';
 
-const userToken = false;
+// const userToken = false;
 
-const App = () => (
-  <div className="App">
-    <Switch>
-      <Route exact path="/login">
-        <Login />
-      </Route>
+const App = () => {
+  const userToken = JSON.parse(localStorage.getItem('userToken'));
+  return (
+    <div className="App">
+      <Switch>
+        <Route exact path="/login">
+          <Login />
+        </Route>
 
-      <Route
-        exact
-        path="/"
-        render={() => {
-          if (!userToken) {
-            return <Redirect to="/login" />;
-          }
-          return <HomePage />;
-        }}
-      />
-    </Switch>
+        <Route
+          exact
+          path="/"
+          render={() => {
+            if (!userToken) {
+              return <Redirect to="/login" />;
+            }
+            return <HomePage />;
+          }}
+        />
+      </Switch>
 
-  </div>
-);
+    </div>
+  );
+};
 
 export default App;
