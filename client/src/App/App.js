@@ -1,11 +1,12 @@
 import React from 'react';
-import Counter from './Counter';
+import './App.css';
+import Login from './Login';
 
 const App = () => (
   <div className="App">
     APP
-    <Counter />
     <p>blabla</p>
+    <Login />
   </div>
 );
 
