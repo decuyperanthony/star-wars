@@ -37,7 +37,7 @@ const App = () => {
       <Route
         key={`${soldier.name}bonjour`}
         exact
-        path={`/${slugify(soldier.name)}`}
+        path={`/${slugify(soldier.name).toLowerCase()}`}
         render={() => {
           if (!userToken) {
             return <Redirect to="/login" />;
