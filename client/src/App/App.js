@@ -4,7 +4,6 @@ import {
   Route,
   Switch,
   Redirect,
-  useRouteMatch,
 } from 'react-router-dom';
 
 import './App.css';
@@ -25,18 +24,13 @@ const App = () => (
       <Route
         exact
         path="/"
-        render={(props) => {
+        render={() => {
           if (!userToken) {
             return <Redirect to="/login" />;
           }
-          // eslint-disable-next-line react/jsx-props-no-spreading
           return <HomePage />;
         }}
       />
-
-      {/* <Route path="/">
-        <HomePage />
-      </Route> */}
     </Switch>
 
   </div>
