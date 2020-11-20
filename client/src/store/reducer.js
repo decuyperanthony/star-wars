@@ -1,23 +1,30 @@
-
 import {
-    INCREMENT
-  } from './actions';
+  ERROR_AUTH,
+  SET_USER,
+} from './action/auth';
 
 const initialState = {
-    counter: 0,
-  };
-
+  errorAuth: '',
+  userData: {},
+};
 
 export default (state = initialState, action = {}) => {
-    switch (action.type) {
-      case INCREMENT: {
-        return {
-          ...state,
-          counter: state.counter + 1,
-        };
-      }
-      default: {
-        return state;
-      }
+  switch (action.type) {
+    case ERROR_AUTH: {
+      return {
+        ...state,
+        errorAuth: action.payload,
+      };
     }
-  };
+
+    case SET_USER: {
+      return {
+        ...state,
+        userData: action.user,
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+};

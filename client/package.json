@@ -3,18 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@material-ui/styles": "^4.10.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@typescript-eslint/eslint-plugin": "2.x",
     "@typescript-eslint/parser": "2.x",
+    "axios": "^0.21.0",
     "babel-eslint": "^10.1.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-plugin-flowtype": "4.x",
     "lodash": "^4.17.19",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-hook-form": "^6.11.3",
     "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
@@ -29,10 +36,10 @@
   "eslintConfig": {
     "extends": "react-app",
     "settings": {
-			"react": {
-				"version": "999.999.999"
-			}
-		}
+      "react": {
+        "version": "999.999.999"
+      }
+    }
   },
   "browserslist": {
     "production": [
