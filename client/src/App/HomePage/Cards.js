@@ -1,5 +1,7 @@
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -7,7 +9,7 @@ import slugify from 'slugify';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
 //   card: {
 //     display: 'flex',
 //     [theme.breakpoints.down('xs')]: {
@@ -37,32 +39,37 @@ const useStyles = makeStyles((theme) => ({
 const Cards = () => {
   const history = useHistory();
   const classes = useStyles();
-  const { soldiers } = useSelector((state) => state);
+  const { soldiers, inputValue } = useSelector((state) => state);
   // === === === METHOD
   const handleGetSoldierPage = (soldierName) => {
-    console.log('soldierName', soldierName);
     history.push(`/${slugify(soldierName)}`);
   };
 
   // === === === MAP SUR LES SOLDATS
   let soldiersJSX;
-  if (soldiers.results) {
-    soldiersJSX = soldiers.results.map((s) => (
-      <Grid
-        key={s.name}
-        item
-        xs={12}
-        sm={6}
-        md={4}
-      >
-        <Card
-          className={classes.cardContainer}
-          onClick={() => handleGetSoldierPage(s.name)}
-        >
-          {s.name}
-        </Card>
-      </Grid>
-    ));
+  if (soldiers) {
+    // eslint-disable-next-line max-len
+    const filterSoldier = soldiers.filter((sol) => sol.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1);
+    soldiersJSX = filterSoldier.map((s) => {
+      if (s !== null) {
+        return (
+          <Grid
+            key={s.name}
+            item
+            xs={12}
+            sm={6}
+            md={4}
+          >
+            <Card
+              className={classes.cardContainer}
+              onClick={() => handleGetSoldierPage(s.name)}
+            >
+              {s.name}
+            </Card>
+          </Grid>
+        );
+      }
+    });
   }
   return (
     <div className={classes.cardsContainer}>
