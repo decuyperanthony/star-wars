@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
     backgroundColor: '#272B30',
     padding: '0.5em',
+    height: '100%',
     // margin: '0.5em',
   },
   //   card: {
