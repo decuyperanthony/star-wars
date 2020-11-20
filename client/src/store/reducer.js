@@ -3,9 +3,12 @@ import {
   SET_USER,
 } from './action/auth';
 
+import { SET_ALL_SOLDIERS } from './action/home';
+
 const initialState = {
   errorAuth: '',
   userData: {},
+  soldiers: [],
 };
 
 export default (state = initialState, action = {}) => {
@@ -21,6 +24,12 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         userData: action.user,
+      };
+    }
+    case SET_ALL_SOLDIERS: {
+      return {
+        ...state,
+        soldiers: action.soldiers,
       };
     }
     default: {
