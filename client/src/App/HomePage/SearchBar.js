@@ -1,15 +1,15 @@
 import React from 'react';
 
 import {
-// useDispatch,
+  useDispatch,
 // useSelector,
 } from 'react-redux';
 import { makeStyles, fade } from '@material-ui/core/styles';
 
 import InputBase from '@material-ui/core/InputBase';
 // import { setInputValue } from '../../../../../actions/shop';
-// import { setArticleByBrandId } from '../../../../../actions/shop';
 import SearchIcon from '@material-ui/icons/Search';
+import { setInputValue } from '../../store/action/home';
 
 const useStyles = makeStyles((theme) => ({
 //   blocHosearchBarContainermePage: {
@@ -28,18 +28,23 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 2),
     height: '100%',
     position: 'absolute',
-    right: '28.5em',
+    // right: '28.5em',
     pointerEvents: 'none',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    [theme.breakpoints.down('xs')]: {
-      // width: '20ch',
-      right: 0,
-    },
+    // [theme.breakpoints.down('xs')]: {
+    //   // width: '20ch',
+    //   right: 0,
+    // },
   },
   inputRoot: {
+    width: '85%',
     color: 'inherit',
+    [theme.breakpoints.down('xs')]: {
+      // width: '20ch',
+      width: '65%',
+    },
   },
   inputInput: {
     // padding: theme.spacing(1, 1, 1, 0),
@@ -56,15 +61,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SearchBar = () => {
+  const dispatch = useDispatch();
   const classes = useStyles();
   const handleChange = (e) => {
-    // if (e.target.value === '') {
-    //   console.log('cliqué');
-    //   getArticles();
-    // } else {
-    //   getArticleByTitle(e.target.value);
-    // }
-    console.log('e.target.value', e.target.value);
+    dispatch(setInputValue(e.target.value));
   };
   return (
     <div className={classes.searchBarContainer}>
