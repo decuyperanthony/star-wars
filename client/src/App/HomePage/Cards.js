@@ -8,6 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import slugify from 'slugify';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
+// import getAllSoldiers from '../../utils/getAllSoldiers';
 
 const useStyles = makeStyles(() => ({
 //   card: {
@@ -37,19 +38,23 @@ const useStyles = makeStyles(() => ({
 }));
 
 const Cards = () => {
+//   React.useEffect(() => {
+//     getAllSoldiers();
+//   }, []);
   const history = useHistory();
   const classes = useStyles();
   const { soldiers, inputValue } = useSelector((state) => state);
   // === === === METHOD
   const handleGetSoldierPage = (soldierName) => {
-    history.push(`/${slugify(soldierName)}`);
+    history.push(`/${slugify(soldierName).toLowerCase()}`);
   };
 
   // === === === MAP SUR LES SOLDATS
   let soldiersJSX;
+  let filterSoldier;
   if (soldiers) {
     // eslint-disable-next-line max-len
-    const filterSoldier = soldiers.filter((sol) => sol.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1);
+    filterSoldier = soldiers.filter((sol) => sol.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1);
     soldiersJSX = filterSoldier.map((s) => {
       if (s !== null) {
         return (
@@ -70,14 +75,21 @@ const Cards = () => {
         );
       }
     });
+    if (filterSoldier.length === 0) {
+      return (
+        <div className={classes.cardsContainer}>
+          Aucun résultat..
+        </div>
+      );
+    }
+    return (
+      <div className={classes.cardsContainer}>
+        <Grid container spacing={2}>
+          {soldiersJSX}
+        </Grid>
+      </div>
+    );
   }
-  return (
-    <div className={classes.cardsContainer}>
-      <Grid container spacing={2}>
-        {soldiersJSX}
-      </Grid>
-    </div>
-  );
 };
 
 export default Cards;

@@ -11,7 +11,6 @@ const Soldier = ({ data }) => (
     }}
     >
       {data.name}
-
     </div>
     <div>
       Height :
