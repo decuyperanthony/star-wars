@@ -33,6 +33,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    [theme.breakpoints.down('xs')]: {
+      // width: '20ch',
+      right: 0,
+    },
   },
   inputRoot: {
     color: 'inherit',
