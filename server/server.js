@@ -3,7 +3,7 @@ dotenv.config();
 const express = require("express");
 
 //! peut etre require body parser
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 
 //* ROUTER
@@ -12,7 +12,12 @@ const router = require("./router/router");
 
 const app = express();
 
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
+app.use(
+    express.urlencoded({
+        extended: true
+    })
+);
 
 // === reglage cors
 app.use((req, res, next) => {
