@@ -6,6 +6,13 @@ export const setAllSoldiers = (soldiers) => ({
   soldiers,
 });
 
+export const SET_SOLDIERS = 'SET_SOLDIERS';
+
+export const setSoldiers = (soldiers) => ({
+  type: SET_SOLDIERS,
+  soldiers,
+});
+
 export const SET_NEXT_PAGE = 'SET_NEXT_PAGE';
 
 export const setNextPage = (payload) => ({

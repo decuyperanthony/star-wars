@@ -11,6 +11,8 @@ import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import { setInputValue } from '../../store/action/home';
 
+import getSoldierByName from '../../utils/getSoldierByName';
+
 const useStyles = makeStyles((theme) => ({
 //   blocHosearchBarContainermePage: {
 
@@ -64,6 +66,7 @@ const SearchBar = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const handleChange = (e) => {
+    getSoldierByName(e.target.value);
     dispatch(setInputValue(e.target.value));
   };
   return (
@@ -72,12 +75,10 @@ const SearchBar = () => {
         <SearchIcon
           fontSize="large"
         />
-
       </div>
-
       <InputBase
         onChange={handleChange}
-          // placeholder={t('shop-navbar-botom-search')}
+        placeholder="rechercher le nom d'un soldat"
         classes={{
           root: classes.inputRoot,
           input: classes.inputInput,

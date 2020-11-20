@@ -10,7 +10,7 @@ import {
 import './App.css';
 
 //* === method
-import getAllSoldiers from '../utils/getAllSoldiers';
+// import getAllSoldiers from '../utils/getAllSoldiers';
 
 //* == component
 import Login from './Login';
@@ -22,11 +22,11 @@ import Soldier from './HomePage/Card';
 const App = () => {
   const userToken = JSON.parse(localStorage.getItem('userToken'));
 
-  React.useEffect(() => {
-    if (userToken) {
-      getAllSoldiers();
-    }
-  }, [userToken]);
+  // React.useEffect(() => {
+  //   if (userToken) {
+  //     getAllSoldiers();
+  //   }
+  // }, [userToken]);
   // if (userToken) {
   //   getAllSoldiers();
   // }

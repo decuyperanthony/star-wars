@@ -4,10 +4,11 @@ import {
 } from './action/auth';
 
 import {
-  SET_ALL_SOLDIERS,
+  // SET_ALL_SOLDIERS,
   SET_NEXT_PAGE,
   SET_INPUT_VALUE,
   SET_TOTAL_RESULT,
+  SET_SOLDIERS,
 } from './action/home';
 
 const initialState = {
@@ -34,13 +35,21 @@ export default (state = initialState, action = {}) => {
         userData: action.user,
       };
     }
-    case SET_ALL_SOLDIERS: {
+
+    case SET_SOLDIERS: {
+      // console.log('action', action);
       return {
         ...state,
-        soldiers: [...state.soldiers, ...action.soldiers],
-        // soldiers: action.soldiers,
+        soldiers: action.soldiers,
       };
     }
+    // case SET_ALL_SOLDIERS: {
+    //   return {
+    //     ...state,
+    //     soldiers: [...state.soldiers, ...action.soldiers],
+    //     // soldiers: action.soldiers,
+    //   };
+    // }
     case SET_NEXT_PAGE: {
       return {
         ...state,
