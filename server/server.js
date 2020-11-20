@@ -7,7 +7,7 @@ const express = require("express");
 const PORT = process.env.PORT || 3000;
 
 //* ROUTER
-// const homeRouter = require("./router/homeRouter");
+const authRouter = require("./router/authRouter");
 const router = require("./router/router");
 
 const app = express();
@@ -27,6 +27,7 @@ app.use((req, res, next) => {
 });
 
 app.use(router);
+app.use(authRouter)
 
 app.listen(PORT, () => {
     console.log("Server ready, listening on port " + PORT);
