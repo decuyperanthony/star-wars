@@ -19,7 +19,7 @@ const homeController = {
                      soldiers = res.data;
                  })
                  .catch(err => console.trace(err));
-                 console.log('soldiers', soldiers)
+                //  console.log('soldiers', soldiers)
                 res.send(soldiers);
         } catch (error) {
             console.trace(error);
