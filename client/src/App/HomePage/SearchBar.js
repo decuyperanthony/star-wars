@@ -22,22 +22,13 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    // [theme.breakpoints.up('sm')]: {
-    //   marginLeft: theme.spacing(3),
-    //   width: 'auto',
-    // },
-    // [theme.breakpoints.down('sm')]: {
-    //   display: 'none',
-    // },
+    marginBottom: '0.5em',
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
     height: '100%',
     position: 'absolute',
-    right: '11.5em',
+    right: '28.5em',
     pointerEvents: 'none',
     display: 'flex',
     alignItems: 'center',
@@ -50,19 +41,13 @@ const useStyles = makeStyles((theme) => ({
     // padding: theme.spacing(1, 1, 1, 0),
     padding: '10px 8px 10px 0',
     // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
+    // paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    // transition: theme.transitions.create('width'),
+    // width: '100%',
     [theme.breakpoints.up('md')]: {
       // width: '20ch',
     },
   },
-  //   card: {
-  //     display: 'flex',
-  //     [theme.breakpoints.down('xs')]: {
-  //       width: '250px',
-  //     },
-  //   },
 
 }));
 
