@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 // == controller
-const homeController = require('../controllers/homeController');
+const authController = require('../controllers/authController');
 
 //* === === === === ROUTE === === === ===
-router.get('/', homeController.homeApi);
+router.post('/login', authController.loginAction);
 
 module.exports = router
