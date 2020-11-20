@@ -82,7 +82,6 @@ const Login = () => {
     setTogglePassword(!togglePassword);
   };
   const onSubmit = (data) => {
-    console.log('data', data);
     dispatch(login({
       history,
       data,

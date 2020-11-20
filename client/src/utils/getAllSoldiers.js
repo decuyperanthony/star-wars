@@ -5,7 +5,11 @@ import store from '../store/index';
 import { API_URL } from './constante';
 
 // == actions
-import { setAllSoldiers } from '../store/action/home';
+import {
+  setAllSoldiers,
+  setNextPage,
+  setTotalResult,
+} from '../store/action/home';
 
 const getAllSoldiers = (url = `${API_URL}/soldiers`) => {
   const promise = axios.get(
@@ -13,9 +17,10 @@ const getAllSoldiers = (url = `${API_URL}/soldiers`) => {
   );
   promise.then((res) => {
     // console.log('res.data', res.data);
-    const soldiers = res.data;
-    console.log('soldiers', soldiers);
-    store.dispatch(setAllSoldiers(soldiers));
+    const { results, next, count } = res.data;
+    store.dispatch(setAllSoldiers(results));
+    store.dispatch(setNextPage(next));
+    store.dispatch(setTotalResult(count));
   });
 };
 

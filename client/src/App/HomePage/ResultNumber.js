@@ -1,8 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
 //   card: {
 //     display: 'flex',
 //     [theme.breakpoints.down('xs')]: {
@@ -20,10 +21,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ResultNumber = () => {
+  const { count } = useSelector((state) => state);
   const classes = useStyles();
   return (
     <div className={classes.resultNumberContainer}>
-      La recherche a donné x resultats
+      La recherche a donné
+      {' '}
+      {count}
+      {' '}
+      resultats
     </div>
   );
 };

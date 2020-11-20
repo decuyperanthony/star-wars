@@ -19,7 +19,6 @@ export default (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN: {
       console.log('login');
-      // // console.log('login');
       // store.dispatch(setLoaderOpen());
       // let errorMessage = '';
       // store.dispatch({ type: SET_ERROR_AUTH, errorMessage });
@@ -48,7 +47,6 @@ export default (store) => (next) => (action) => {
           // store.dispatch(setLoaderClose());
           // console.trace(error);
           store.dispatch(errorAuth('Wrong email or password'));
-          console.log(`Can’t access ${API_URL} response. Blocked by browser?`);
         });
       break;
     }
