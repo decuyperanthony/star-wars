@@ -80,7 +80,8 @@ const Login = () => {
   const { register, handleSubmit, errors } = useForm();
   // == traitement erreur auth
   let errorAuthJSX;
-  const { errorAuth } = useSelector((state) => state.auth);
+  const { errorAuth } = useSelector((state) => state);
+
   if (errorAuth) {
     errorAuthJSX = (
       <Alert
@@ -105,32 +106,32 @@ const Login = () => {
   console.log(errors);
   return (
     <div className={classes.blocPageLogin}>
-      <h2 style={{ color: '#2F80ED', textAlign: 'center' }}>Log-in to your account</h2>
+      <h2 style={{ color: '#2F80ED', textAlign: 'center' }}>Log-in to your Star Wars account</h2>
       <Card className={classes.cardStyle}>
         <main className="page-login">
           <div className="input-login">
             {errorAuthJSX}
             <form onSubmit={handleSubmit(onSubmit)}>
               <TextField
-                error={!!errors.email}
+                error={!!errors.username}
                 fullWidth
                 variant="outlined"
               // required
                 className={classes.textField}
                 inputRef={
                     register({
-                      required: 'Email is required',
-                      pattern: {
-                        value: /^\S+@\S+$/i,
-                        message: 'Wrong format',
-                      },
+                      required: 'Username is required',
+                      // pattern: {
+                      //   value: /^\S+@\S+$/i,
+                      //   message: 'Wrong format',
+                      // },
                     })
                   }
-                helperText={errors.email ? errors.email.message : null}
+                helperText={errors.username ? errors.username.message : null}
                 type="text"
                   // id="input-with-icon-textfield"
-                label="email"
-                name="email"
+                label="username"
+                name="username"
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
@@ -182,11 +183,11 @@ const Login = () => {
         </main>
 
       </Card>
-      <Card className={classes.cardStyle} style={{ textAlign: 'center' }}>
+      {/* <Card className={classes.cardStyle} style={{ textAlign: 'center' }}>
         New to us?
         {' '}
         <Link href="#" style={{ color: '#2F80ED' }} onClick={() => history.push('/signup')}>Sign Up</Link>
-      </Card>
+      </Card> */}
     </div>
   );
 };
