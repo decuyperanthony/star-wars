@@ -1,11 +1,14 @@
 const dotenv = require("dotenv");
 dotenv.config();
 const express = require("express");
+
 //! peut etre require body parser
 // const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 
-// on require les router ?
+//* ROUTER
+// const homeRouter = require("./router/homeRouter");
+const router = require("./router/router");
 
 const app = express();
 
@@ -23,7 +26,7 @@ app.use((req, res, next) => {
     next();
 });
 
-// app.use(router);
+app.use(router);
 
 app.listen(PORT, () => {
     console.log("Server ready, listening on port " + PORT);
