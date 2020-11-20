@@ -12,15 +12,13 @@ import { Alert } from '@material-ui/lab';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import {
   TextField,
-  Link,
+  // Link,
   Button,
   Card,
   InputAdornment,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { login } from '../../store/action/auth';
-
-// import './styles.css';
 
 // == style
 const useStyles = makeStyles({
@@ -51,25 +49,12 @@ const useStyles = makeStyles({
   buttonLogin: {
     backgroundColor: '#2F80ED',
     color: 'white',
-    // marginTop: '2em',
-    // marginBottom: '2em',
-    // height: '40px',
   },
   iconEye: {
     '&:hover': {
       cursor: 'pointer',
     },
   },
-  // buttonForgetPwd: {
-  //   marginTop: '-6em',
-  //   paddingLeft: '0em',
-  //   fontSize: '12px',
-  // },
-  // inputAdornment: {
-  //   '&:hover': {
-  //     cursor: 'pointer',
-  //   },
-  // },
 });
 
 const Login = () => {
@@ -121,10 +106,6 @@ const Login = () => {
                 inputRef={
                     register({
                       required: 'Username is required',
-                      // pattern: {
-                      //   value: /^\S+@\S+$/i,
-                      //   message: 'Wrong format',
-                      // },
                     })
                   }
                 helperText={errors.username ? errors.username.message : null}
@@ -183,11 +164,6 @@ const Login = () => {
         </main>
 
       </Card>
-      {/* <Card className={classes.cardStyle} style={{ textAlign: 'center' }}>
-        New to us?
-        {' '}
-        <Link href="#" style={{ color: '#2F80ED' }} onClick={() => history.push('/signup')}>Sign Up</Link>
-      </Card> */}
     </div>
   );
 };
