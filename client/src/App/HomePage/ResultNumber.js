@@ -21,16 +21,28 @@ const useStyles = makeStyles(() => ({
 }));
 
 const ResultNumber = () => {
-  const { count } = useSelector((state) => state);
+  const { count, inputValue } = useSelector((state) => state);
   const classes = useStyles();
+  let resultat = 'resultat';
+  if (count > 1) resultat += 's';
+  let sentenceResultNumberJSX;
+  if (inputValue === '') {
+    sentenceResultNumberJSX = '';
+  } else {
+    sentenceResultNumberJSX = (
+      <div className={classes.resultNumberContainer}>
+        La recherche a donné
+        {' '}
+        {count}
+        {' '}
+        {resultat}
+      </div>
+    );
+  }
   return (
-    <div className={classes.resultNumberContainer}>
-      La recherche a donné
-      {' '}
-      {count}
-      {' '}
-      resultats
-    </div>
+    <>
+      {sentenceResultNumberJSX}
+    </>
   );
 };
 
