@@ -30,9 +30,11 @@ const LoadMoreComponent = () => {
   const [disabled, setDisabled] = React.useState(true);
   const { count, soldiers } = useSelector((state) => state);
   React.useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    (count > 10 && soldiers.length > 9) ? setDisabled(false) : setDisabled(true);
-  }, [count, soldiers.length]);
+    if (soldiers) {
+      // eslint-disable-next-line no-unused-expressions
+      (count > 10 && soldiers.length > 9) ? setDisabled(false) : setDisabled(true);
+    }
+  }, [count, soldiers.length, soldiers]);
   const handleLoadMoreClick = () => {
     getMoreSoldiers();
   };

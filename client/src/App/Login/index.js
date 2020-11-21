@@ -87,7 +87,7 @@ const Login = () => {
       data,
     }));
   };
-  console.log(errors);
+  // console.log(errors);
   return (
     <div className={classes.blocPageLogin}>
       <h2

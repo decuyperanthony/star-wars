@@ -80,7 +80,7 @@ const Cards = () => {
         <>{' '}</>
       );
     }
-    if (filterSoldier.length === 0) {
+    if (filterSoldier && filterSoldier.length === 0) {
       return (
         <div className={classes.cardsContainer}>
           Aucun résultat..
