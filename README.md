@@ -1,10 +1,11 @@
 # star-wars
 
 ## Server
-### !! IMPORTANT => add dotenv file
-- PORT=8000
-- SWAPI_API=https://swapi.dev/api/
-- SECRET_SIGN_TOKEN=jesuisletoken
+### To init server
+```bash
+$ cp .env.example .env
+```
+
 
 ### Install
 ```bash
