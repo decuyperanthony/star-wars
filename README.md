@@ -25,9 +25,7 @@ $ yarn start
 - username: 'Luke'
 - password: 'DadSucks'
 
-#### login
+
 
 ![Demo login](login.png
 )
-- Login : Luke
-- password : DadSucks
