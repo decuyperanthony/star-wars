@@ -2,14 +2,14 @@ import React from 'react';
 
 import {
   useDispatch,
-// useSelector,
+  useSelector,
 } from 'react-redux';
 import { makeStyles, fade } from '@material-ui/core/styles';
 
 import InputBase from '@material-ui/core/InputBase';
 // import { setInputValue } from '../../../../../actions/shop';
 import SearchIcon from '@material-ui/icons/Search';
-import { setInputValue } from '../../store/action/home';
+import { setInputValue, restartSoldiersState } from '../../store/action/home';
 
 import getSoldierByName from '../../utils/getSoldierByName';
 
@@ -65,9 +65,16 @@ const useStyles = makeStyles((theme) => ({
 const SearchBar = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
+  const { inputValue } = useSelector((state) => state);
+  // const [inputStateValue, setInputStateValue] = React.useState('');
   const handleChange = (e) => {
-    getSoldierByName(e.target.value);
     dispatch(setInputValue(e.target.value));
+    // setInputStateValue(e.target.value);
+    if (e.target.value === '') {
+      dispatch(restartSoldiersState());
+    } else {
+      getSoldierByName(e.target.value);
+    }
   };
   return (
     <div className={classes.searchBarContainer}>
@@ -77,6 +84,7 @@ const SearchBar = () => {
         />
       </div>
       <InputBase
+        value={inputValue}
         onChange={handleChange}
         placeholder="rechercher le nom d'un soldat"
         classes={{
