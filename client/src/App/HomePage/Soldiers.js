@@ -41,6 +41,7 @@ const Cards = () => {
 //   React.useEffect(() => {
 //     getAllSoldiers();
 //   }, []);
+
   const history = useHistory();
   const classes = useStyles();
   const { soldiers, inputValue } = useSelector((state) => state);
