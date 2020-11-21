@@ -54,8 +54,8 @@ const Cards = () => {
   let filterSoldier;
   if (soldiers) {
     // eslint-disable-next-line max-len
-    filterSoldier = soldiers.filter((sol) => sol.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1);
-    soldiersJSX = filterSoldier.map((s) => {
+    // filterSoldier = soldiers.filter((sol) => sol.name.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1);
+    soldiersJSX = soldiers.map((s) => {
       if (s !== null) {
         return (
           <Grid

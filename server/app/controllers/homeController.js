@@ -34,6 +34,7 @@ const homeController = {
             let soldiers;
             await axios.get(`${API_URL}/people/?search=${search}`)
                  .then((res) => {
+                     console.log('res', res)
                      soldiers = res.data;
                  })
                  .catch(err => console.trace(err));

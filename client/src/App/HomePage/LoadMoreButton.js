@@ -29,6 +29,7 @@ const LoadMoreComponent = () => {
   const classes = useStyles();
   const [disabled, setDisabled] = React.useState(true);
   const { count, soldiers } = useSelector((state) => state);
+  console.log('count', count);
   React.useEffect(() => {
     if (soldiers) {
       // eslint-disable-next-line no-unused-expressions
