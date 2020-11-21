@@ -5,7 +5,7 @@ import store from '../store/index';
 // import { API_URL } from './constante';
 
 // == actions
-import { setAllSoldiers, setNextPage } from '../store/action/home';
+import { setSoldiers, setNextPage } from '../store/action/home';
 
 const getAllSoldiers = () => {
   const state = store.getState();
@@ -15,7 +15,7 @@ const getAllSoldiers = () => {
   promise.then((res) => {
     // console.log('res.data', res.data);
     const soldiers = res.data;
-    store.dispatch(setAllSoldiers(soldiers.results));
+    store.dispatch(setSoldiers(soldiers.results));
     store.dispatch(setNextPage(soldiers.next));
   });
 };

@@ -35,7 +35,7 @@ const App = () => {
   if (soldiers) {
     soldierRouter = soldiers.map((soldier) => (
       <Route
-        key={`${soldier.name}bonjour`}
+        key={`${soldier.name}`}
         exact
         path={`/${slugify(soldier.name).toLowerCase()}`}
         render={() => {
