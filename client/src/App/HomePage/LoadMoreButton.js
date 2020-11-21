@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
@@ -26,18 +27,24 @@ const useStyles = makeStyles((theme) => ({
 
 const LoadMoreComponent = () => {
   const classes = useStyles();
+  const [disabled, setDisabled] = React.useState(true);
+  const { count, soldiers } = useSelector((state) => state);
+  React.useEffect(() => {
+    (count > 10 && soldiers.length > 9) ? setDisabled(false) : setDisabled(true);
+  }, [count, soldiers.length]);
   const handleLoadMoreClick = () => {
     getMoreSoldiers();
   };
   return (
     <div className={classes.loadMoreContainer}>
       <Button
+        disabled={disabled}
         onClick={handleLoadMoreClick}
         style={{
           backgroundColor: 'yellow',
         }}
       >
-        Load More
+        See next results
 
       </Button>
     </div>
