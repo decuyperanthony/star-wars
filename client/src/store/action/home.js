@@ -33,3 +33,9 @@ export const setInputValue = (payload) => ({
   type: SET_INPUT_VALUE,
   payload,
 });
+
+export const RESTART_SOLDIERS_STATE = 'RESTART_SOLDIERS_STATE';
+
+export const restartSoldiersState = () => ({
+  type: RESTART_SOLDIERS_STATE,
+});

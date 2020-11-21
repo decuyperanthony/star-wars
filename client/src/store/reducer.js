@@ -9,6 +9,7 @@ import {
   SET_INPUT_VALUE,
   SET_TOTAL_RESULT,
   SET_SOLDIERS,
+  RESTART_SOLDIERS_STATE,
 } from './action/home';
 
 const initialState = {
@@ -37,10 +38,10 @@ export default (state = initialState, action = {}) => {
     }
 
     case SET_SOLDIERS: {
-      // console.log('action', action);
       return {
         ...state,
         soldiers: action.soldiers,
+        // soldiers: [...state.soldiers, ...action.soldiers],
       };
     }
     // case SET_ALL_SOLDIERS: {
@@ -66,6 +67,12 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         count: action.payload,
+      };
+    }
+    case RESTART_SOLDIERS_STATE: {
+      return {
+        ...state,
+        soldiers: [],
       };
     }
     // case SET_ALL_SOLDIERS: {
