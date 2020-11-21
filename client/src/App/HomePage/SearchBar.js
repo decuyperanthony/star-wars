@@ -63,6 +63,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SearchBar = () => {
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log('This will run after 1 second!');
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
   const dispatch = useDispatch();
   const classes = useStyles();
   const { inputValue } = useSelector((state) => state);

@@ -75,6 +75,11 @@ const Cards = () => {
         );
       }
     });
+    if (inputValue === '') {
+      return (
+        <>{' '}</>
+      );
+    }
     if (filterSoldier.length === 0) {
       return (
         <div className={classes.cardsContainer}>

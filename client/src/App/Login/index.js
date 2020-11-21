@@ -47,7 +47,7 @@ const useStyles = makeStyles({
     // height: '40px',
   },
   buttonLogin: {
-    backgroundColor: '#2F80ED',
+    backgroundColor: '#BFAF20',
     color: 'white',
   },
   iconEye: {
@@ -90,7 +90,14 @@ const Login = () => {
   console.log(errors);
   return (
     <div className={classes.blocPageLogin}>
-      <h2 style={{ color: '#2F80ED', textAlign: 'center' }}>Log-in to your Star Wars account</h2>
+      <h2
+        style={{
+          color: '#BFAF20',
+          textAlign: 'center',
+        }}
+      >
+        Log-in to your Star Wars account
+      </h2>
       <Card className={classes.cardStyle}>
         <main className="page-login">
           <div className="input-login">

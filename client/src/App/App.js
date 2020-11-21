@@ -15,7 +15,7 @@ import './App.css';
 //* == component
 import Login from './Login';
 import HomePage from './HomePage';
-import Soldier from './HomePage/Card';
+import Soldier from './HomePage/SoldierDetails';
 // const userToken = false;
 // == auto connect
 

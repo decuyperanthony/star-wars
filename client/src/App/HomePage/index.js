@@ -3,9 +3,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 // === component
+import Title from './Title';
 import SearchBar from './SearchBar';
 import ResultNumber from './ResultNumber';
-import Cards from './Cards';
+import Soldiers from './Soldiers';
 import LoadMoreComponent from './LoadMoreButton';
 
 const useStyles = makeStyles(() => ({
@@ -30,10 +31,10 @@ const HomePage = () => {
   const classes = useStyles();
   return (
     <div className={classes.blocHomePage}>
-      <h1 style={{ margin: 0 }}>Star wars</h1>
+      <Title />
       <SearchBar />
       <ResultNumber />
-      <Cards />
+      <Soldiers />
       <LoadMoreComponent />
     </div>
   );

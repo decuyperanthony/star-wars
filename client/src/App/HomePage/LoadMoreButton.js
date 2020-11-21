@@ -40,9 +40,10 @@ const LoadMoreComponent = () => {
     <div className={classes.loadMoreContainer}>
       <Button
         disabled={disabled}
+        // display="none"
         onClick={handleLoadMoreClick}
         style={{
-          backgroundColor: 'yellow',
+          backgroundColor: '#BFAF20',
         }}
       >
         See next results
