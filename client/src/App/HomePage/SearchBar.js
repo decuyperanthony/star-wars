@@ -63,15 +63,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SearchBar = () => {
-  React.useEffect(() => {
-    const timer = setTimeout(() => {
-      console.log('This will run after 1 second!');
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
   const dispatch = useDispatch();
   const classes = useStyles();
   const { inputValue } = useSelector((state) => state);
+  // let event;
   // const [inputStateValue, setInputStateValue] = React.useState('');
   const handleChange = (e) => {
     dispatch(setInputValue(e.target.value));
@@ -81,6 +76,20 @@ const SearchBar = () => {
     } else {
       getSoldierByName(e.target.value);
     }
+    // event = e;
+    // React.useEffect(() => {
+    // setTimeout(() => {
+    //   console.log('This will run after 350 ms!');
+    //   dispatch(setInputValue(event.target.value));
+    //   // setInputStateValue(e.target.value);
+    //   if (event.target.value === '') {
+    //     dispatch(restartSoldiersState());
+    //   } else {
+    //     getSoldierByName(event.target.value);
+    //   }
+    // }, 350);
+    //   return () => clearTimeout(timer);
+    // }, []);
   };
   return (
     <div className={classes.searchBarContainer}>
