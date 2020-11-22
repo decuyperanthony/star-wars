@@ -1,27 +1,21 @@
 /* eslint-disable no-console */
-// import React from 'react';
 import axios from 'axios';
-// import { useTranslation } from 'react-i18next';
 
 import {
   LOGIN,
   errorAuth,
-  setUser,
   DISCONNECT,
 } from '../action/auth';
 import { enterHomePage } from '../action/route';
-
-// import { setLoaderOpen, setLoaderClose } from '../action/loader';
 
 import { API_URL } from '../../utils/constante';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN: {
-      console.log('login');
       // store.dispatch(setLoaderOpen());
-      // let errorMessage = '';
-      // store.dispatch({ type: SET_ERROR_AUTH, errorMessage });
+      const errorMessage = '';
+      store.dispatch(errorAuth(errorMessage));
       axios
         .post(`${API_URL}/login`, {
           username: action.payload.data.username,
@@ -30,21 +24,18 @@ export default (store) => (next) => (action) => {
           withCredentials: true,
         })
         .then((res) => {
-          if (res.status === 200) {
-            // console.log('res', res.data.user.mail_actived);
+          if (res.data.success) {
+            // console.log('success');
             localStorage.user = JSON.stringify(res.data.user);
             localStorage.userToken = JSON.stringify(res.data.userToken);
-
-            const user = JSON.parse(localStorage.getItem('user'));
-            store.dispatch(setUser(user));
-            // store.dispatch(setLoaderClose());
             store.dispatch(enterHomePage(action.payload.history));
+          } else {
+            store.dispatch(errorAuth('Désolé, notre serveur ne répond pas'));
           }
         })
         // eslint-disable-next-line no-unused-vars
         .catch((error) => {
           console.log('mauvais mail ou mot de passe');
-          // store.dispatch(setLoaderClose());
           // console.trace(error);
           store.dispatch(errorAuth('Wrong email or password'));
         });
