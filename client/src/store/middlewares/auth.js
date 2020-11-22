@@ -4,6 +4,7 @@ import {
   LOGIN,
   errorAuth,
   DISCONNECT,
+  setUser,
 } from '../action/auth';
 import { enterHomePage } from '../action/route';
 
@@ -21,23 +22,23 @@ export default (store) => (next) => (action) => {
         }, {
           withCredentials: true,
         })
-        .then(async (res) => {
-          if (res.data) {
-            // localStorage.user = JSON.stringify(res.data.user);
-            // localStorage.userToken = JSON.stringify(res.data.userToken);
-            await store.dispatch(enterHomePage(action.payload.history));
+        .then((res) => {
+          if (res.data.success) {
+            localStorage.user = JSON.stringify(res.data.user);
+            localStorage.userToken = JSON.stringify(res.data.userToken);
+            const user = JSON.parse(sessionStorage.getItem('user'));
+            store.dispatch(setUser(user));
+            store.dispatch(enterHomePage(action.payload.history));
           } else {
             store.dispatch(errorAuth('Désolé, notre serveur ne répond pas'));
           }
         })
         .catch(() => {
-          console.log('mauvais mail ou mot de passe');
           store.dispatch(errorAuth('Wrong email or password'));
         });
       break;
     }
     case DISCONNECT: {
-      console.log('DISCONNECT');
       localStorage.clear();
       break;
     }
