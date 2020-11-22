@@ -12,7 +12,6 @@ import { Alert } from '@material-ui/lab';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import {
   TextField,
-  // Link,
   Button,
   Card,
   InputAdornment,
@@ -29,22 +28,17 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     maxWidth: '500px',
     margin: 'auto',
-    // alignItems: 'center',
   },
   cardStyle: {
     margin: '0.5em',
     padding: '1em',
     width: 'auto',
     backgroundColor: 'white',
-    // margin: '0.5em 1em',
-    // // padding: '0 .5em !important',
-    // padding: '1em',
     borderRadius: '4px',
     boxShadow: '0 3px 5px 2px rgba(75, 84, 111, .3)',
   },
   textField: {
     paddingBottom: '1em',
-    // height: '40px',
   },
   buttonLogin: {
     backgroundColor: '#BFAF20',
@@ -63,7 +57,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const [togglePassword, setTogglePassword] = React.useState(false);
   const { register, handleSubmit, errors } = useForm();
-  // == traitement erreur auth
+  //! == traitement erreur auth
   let errorAuthJSX;
   const { errorAuth } = useSelector((state) => state);
 
@@ -107,7 +101,6 @@ const Login = () => {
                 error={!!errors.username}
                 fullWidth
                 variant="outlined"
-              // required
                 className={classes.textField}
                 inputRef={
                     register({
@@ -116,7 +109,6 @@ const Login = () => {
                   }
                 helperText={errors.username ? errors.username.message : null}
                 type="text"
-                  // id="input-with-icon-textfield"
                 label="username"
                 name="username"
                 InputProps={{
@@ -132,7 +124,6 @@ const Login = () => {
                   variant="outlined"
                   fullWidth
                   className={classes.textField}
-              // required
                   error={!!errors.password}
                   inputRef={
                   register({
@@ -142,7 +133,6 @@ const Login = () => {
                   helperText={errors.password ? errors.password.message : null}
                   name="password"
                   type={togglePassword ? 'text' : 'password'}
-                  // id="input-with-icon-textfield"
                   label="password"
                   InputProps={{
                     endAdornment: (
@@ -168,7 +158,6 @@ const Login = () => {
             </form>
           </div>
         </main>
-
       </Card>
     </div>
   );

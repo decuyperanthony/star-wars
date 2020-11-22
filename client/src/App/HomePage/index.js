@@ -15,9 +15,6 @@ const useStyles = makeStyles(() => ({
     margin: 'auto',
     backgroundColor: '#272B30',
     padding: '0.5em',
-    // height: '100%',
-    // minHeight: '50vh',
-    // margin: '0.5em',
   },
 
 }));

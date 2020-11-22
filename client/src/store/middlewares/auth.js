@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import axios from 'axios';
-
 import {
   LOGIN,
   errorAuth,
@@ -13,7 +12,6 @@ import { API_URL } from '../../utils/constante';
 export default (store) => (next) => (action) => {
   switch (action.type) {
     case LOGIN: {
-      // store.dispatch(setLoaderOpen());
       const errorMessage = '';
       store.dispatch(errorAuth(errorMessage));
       axios
@@ -23,20 +21,17 @@ export default (store) => (next) => (action) => {
         }, {
           withCredentials: true,
         })
-        .then((res) => {
-          if (res.data.success) {
-            // console.log('success');
-            localStorage.user = JSON.stringify(res.data.user);
-            localStorage.userToken = JSON.stringify(res.data.userToken);
-            store.dispatch(enterHomePage(action.payload.history));
+        .then(async (res) => {
+          if (res.data) {
+            // localStorage.user = JSON.stringify(res.data.user);
+            // localStorage.userToken = JSON.stringify(res.data.userToken);
+            await store.dispatch(enterHomePage(action.payload.history));
           } else {
             store.dispatch(errorAuth('Désolé, notre serveur ne répond pas'));
           }
         })
-        // eslint-disable-next-line no-unused-vars
-        .catch((error) => {
+        .catch(() => {
           console.log('mauvais mail ou mot de passe');
-          // console.trace(error);
           store.dispatch(errorAuth('Wrong email or password'));
         });
       break;

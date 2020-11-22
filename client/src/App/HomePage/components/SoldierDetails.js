@@ -25,12 +25,10 @@ const useStyles = makeStyles(() => ({
     fontWeight: 'bold',
     fontSize: '1.5em',
   },
-
 }));
 
 const Soldier = ({ data }) => {
   const history = useHistory();
-
   const classes = useStyles();
   return (
     <div className={classes.soldierDetailContainer}>

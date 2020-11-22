@@ -4,24 +4,18 @@ import slugify from 'slugify';
 import {
   Route,
   Switch,
-  Redirect,
 } from 'react-router-dom';
 
 import './App.css';
-
-//* === method
-// import getAllSoldiers from '../utils/getAllSoldiers';
 
 //* == component
 import Login from './Login';
 import HomePage from './HomePage';
 import Soldier from './HomePage/components/SoldierDetails';
-// const userToken = false;
-// == auto connect
 
 const App = () => {
-  const userToken = JSON.parse(localStorage.getItem('userToken'));
   const { soldiers } = useSelector((state) => state);
+  // ROUTE SOLDIER DETAILS
   let soldierRouter;
   if (soldiers) {
     soldierRouter = soldiers.map((soldier) => (
@@ -29,12 +23,7 @@ const App = () => {
         key={`${soldier.name}`}
         exact
         path={`/${slugify(soldier.name).toLowerCase()}`}
-        render={() => {
-          if (!userToken) {
-            return <Redirect to="/login" />;
-          }
-          return <Soldier data={soldier} />;
-        }}
+        render={() => <Soldier data={soldier} />}
       />
     ));
   }
@@ -44,21 +33,14 @@ const App = () => {
         <Route exact path="/login">
           <Login />
         </Route>
-
         <Route
           exact
           path="/"
-          render={() => {
-            if (!userToken) {
-              return <Redirect to="/login" />;
-            }
-            return <HomePage />;
-          }}
+          render={() => <HomePage />}
         />
-
+        {/* ROUTE SOLDIER DETAILS */}
         {soldierRouter}
       </Switch>
-
     </div>
   );
 };

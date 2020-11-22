@@ -1,7 +1,6 @@
 const API_URL = process.env.SWAPI_API;
 const jwtUtils = require('../utils/jwt.utils');
 
-
 const authController = {
     loginAction: async (req, res) => {
         try {
@@ -9,9 +8,10 @@ const authController = {
                 username,
                 password
             } = req.body;
-            // console.log('email', req.body.username);
+
             if (username === 'Luke' && password === 'DadSucks') {
                 const user = {
+                    id: 1,
                     username: 'Luke',
                 }
                 const userToken = jwtUtils.generateTokenForUser(user);
@@ -20,11 +20,8 @@ const authController = {
                     message: 'Vous pouvez passer :)',
                     user,
                     userToken,
-
                 });
             } else {
-                console.log('<< 401 UNAUTHORIZED');
-                console.log('<< mot de passe incorrect');
                 res.status(401).send({
                     success: false,
                     message: 'mot de passe ou pseudo incorrect'

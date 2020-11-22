@@ -2,7 +2,6 @@ const dotenv = require("dotenv");
 dotenv.config();
 const express = require("express");
 
-//! peut etre require body parser
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 

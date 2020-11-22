@@ -53,7 +53,6 @@ const Header = () => {
         color="secondary"
       >
         logout
-
       </Button>
     </div>
   );
