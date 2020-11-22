@@ -37,7 +37,7 @@
 This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 * [Node](https://nodejs.org/dist/latest-v12.x/docs/api/)
 * [React](https://fr.reactjs.org/)
-* [Redux](hhttps://redux.js.org/)
+* [Redux](https://redux.js.org/)
 * [Material UI](https://material-ui.com/)
 * [Swapi](https://swapi.dev/)
 
@@ -100,7 +100,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Anthony de Cuyper - [linkedin](https://www.linkedin.com/in/anthony-de-cuyper/) - decuyperanthony@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/decuyperanthony/star-wars](https://github.com/decuyperanthony/star-wars)
 
 
 
