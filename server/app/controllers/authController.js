@@ -2,7 +2,7 @@ const API_URL = process.env.SWAPI_API;
 const jwtUtils = require('../utils/jwt.utils');
 
 const authController = {
-    loginAction: async (req, res) => {
+    loginAction: (req, res) => {
         try {
             const {
                 username,
