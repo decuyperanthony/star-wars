@@ -7,7 +7,7 @@ import {
   LOGIN,
   errorAuth,
   setUser,
-  // DISCONNECT,
+  DISCONNECT,
 } from '../action/auth';
 import { enterHomePage } from '../action/route';
 
@@ -48,6 +48,11 @@ export default (store) => (next) => (action) => {
           // console.trace(error);
           store.dispatch(errorAuth('Wrong email or password'));
         });
+      break;
+    }
+    case DISCONNECT: {
+      console.log('DISCONNECT');
+      localStorage.clear();
       break;
     }
 

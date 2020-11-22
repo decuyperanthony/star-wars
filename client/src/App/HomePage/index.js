@@ -3,11 +3,11 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 // === component
-import Title from './Title';
-import SearchBar from './SearchBar';
-import ResultNumber from './ResultNumber';
-import Soldiers from './Soldiers';
-import LoadMoreComponent from './LoadMoreButton';
+import Header from './components/Header';
+import SearchBar from './components/SearchBar';
+import ResultNumber from './components/ResultNumber';
+import Soldiers from './components/SoldiersList';
+import LoadMoreComponent from './components/LoadMoreButton';
 
 const useStyles = makeStyles(() => ({
   blocHomePage: {
@@ -15,15 +15,10 @@ const useStyles = makeStyles(() => ({
     margin: 'auto',
     backgroundColor: '#272B30',
     padding: '0.5em',
-    height: '100%',
+    // height: '100%',
+    // minHeight: '50vh',
     // margin: '0.5em',
   },
-  //   card: {
-  //     display: 'flex',
-  //     [theme.breakpoints.down('xs')]: {
-  //       width: '250px',
-  //     },
-  //   },
 
 }));
 
@@ -31,7 +26,7 @@ const HomePage = () => {
   const classes = useStyles();
   return (
     <div className={classes.blocHomePage}>
-      <Title />
+      <Header />
       <SearchBar />
       <ResultNumber />
       <Soldiers />

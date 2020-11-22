@@ -15,21 +15,12 @@ import './App.css';
 //* == component
 import Login from './Login';
 import HomePage from './HomePage';
-import Soldier from './HomePage/SoldierDetails';
+import Soldier from './HomePage/components/SoldierDetails';
 // const userToken = false;
 // == auto connect
 
 const App = () => {
   const userToken = JSON.parse(localStorage.getItem('userToken'));
-
-  // React.useEffect(() => {
-  //   if (userToken) {
-  //     getAllSoldiers();
-  //   }
-  // }, [userToken]);
-  // if (userToken) {
-  //   getAllSoldiers();
-  // }
   const { soldiers } = useSelector((state) => state);
   let soldierRouter;
   if (soldiers) {

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Button } from '@material-ui/core';
-import getMoreSoldiers from '../../utils/getMoreSoldiers';
+import getMoreSoldiers from '../../../utils/getMoreSoldiers';
 
 // eslint-disable-next-line no-unused-vars
 const useStyles = makeStyles((theme) => ({
@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     padding: '0.5em',
     display: 'flex',
     justifyContent: 'center',
+  },
+  diplayNone: {
+    display: 'none',
   },
 
 }));
@@ -40,11 +43,12 @@ const LoadMoreComponent = () => {
     getMoreSoldiers();
   };
   return (
-    <div className={classes.loadMoreContainer}>
+    <div className={disabled ? classes.diplayNone : classes.loadMoreContainer}>
       <Button
-        disabled={disabled}
+        // disabled={disabled}
         // display="none"
         onClick={handleLoadMoreClick}
+        // className={disabled ? classes.diplayNone : null}
         style={{
           backgroundColor: '#BFAF20',
         }}

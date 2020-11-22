@@ -11,15 +11,9 @@ import Card from '@material-ui/core/Card';
 // import getAllSoldiers from '../../utils/getAllSoldiers';
 
 const useStyles = makeStyles(() => ({
-//   card: {
-//     display: 'flex',
-//     [theme.breakpoints.down('xs')]: {
-//       width: '250px',
-//     },
-//   },
   cardsContainer: {
     backgroundColor: '#4D5054',
-    marginBottom: '0.5em',
+    marginBottom: '1.5em',
     borderRadius: '4px',
     textAlign: 'left',
     padding: '0.5em',
@@ -38,10 +32,6 @@ const useStyles = makeStyles(() => ({
 }));
 
 const Cards = () => {
-//   React.useEffect(() => {
-//     getAllSoldiers();
-//   }, []);
-
   const history = useHistory();
   const classes = useStyles();
   const { soldiers, inputValue } = useSelector((state) => state);

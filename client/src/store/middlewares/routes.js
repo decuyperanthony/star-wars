@@ -1,12 +1,12 @@
-import { ENTER_HOME_PAGE } from '../action/route';
+import { ENTER_HOME_PAGE, ENTER_LOGIN_PAGE } from '../action/route';
 
 // eslint-disable-next-line no-unused-vars
 export default (store) => (next) => (action) => {
   switch (action.type) {
-    // case ENTER_LOGIN_PAGE: {
-    //   action.history.push('/login');
-    //   return;
-    // }
+    case ENTER_LOGIN_PAGE: {
+      action.history.push('/login');
+      return;
+    }
     case ENTER_HOME_PAGE: {
       action.history.push('/');
       return;

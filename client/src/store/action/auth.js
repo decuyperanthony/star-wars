@@ -23,9 +23,6 @@ export const setUser = (user) => ({
   user,
 });
 
-// // === DISCONNECT
-// export const DISCONNECT = 'actions/DISCONNECT';
-
-// export const disconnect = () => ({
-//   type: DISCONNECT,
-// });
+// === DISCONNECT
+export const RESET = 'actions/RESET';
+export const DISCONNECT = 'actions/DISCONNECT';

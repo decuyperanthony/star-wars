@@ -15,11 +15,8 @@ const useStyles = makeStyles(() => ({
     maxWidth: '400px',
     margin: 'auto',
     borderRadius: '4px',
-
-    // maxWidth: '800px',
-    // margin: 'auto',
     backgroundColor: '#272B30',
-    padding: '0.5em',
+    padding: '1.5em',
     // height: '100%',
     // margin: '0.5em',
     color: '#FDE300',
@@ -27,16 +24,13 @@ const useStyles = makeStyles(() => ({
   typoNameStyle: {
     fontWeight: 'bold',
     fontSize: '1.5em',
-
-    // [theme.breakpoints.down('xs')]: {
-    //   width: '250px',
-    // },
   },
 
 }));
 
 const Soldier = ({ data }) => {
   const history = useHistory();
+
   const classes = useStyles();
   return (
     <div className={classes.soldierDetailContainer}>
