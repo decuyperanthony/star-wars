@@ -34,7 +34,7 @@
 
 
 ### Built With
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+
 * [Node](https://nodejs.org/dist/latest-v12.x/docs/api/)
 * [React](https://fr.reactjs.org/)
 * [Redux](https://redux.js.org/)
@@ -48,7 +48,6 @@ This section should list any major frameworks that you built your project using.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
 ```sh
 npm install npm@latest -g
