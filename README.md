@@ -49,7 +49,7 @@
 
 ### Prerequisites
 
-* npm
+* node
 * yarn
 
 ### Installation
