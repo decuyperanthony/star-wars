@@ -60,14 +60,14 @@ npm install npm@latest -g
 git clone https://github.com/decuyperanthony/star-wars.git
 ```
 
-2. To init server && Install NPM server packages && start server
+2. To init server
 ```sh
 cd server
 cp .env.example .env
 npm install
 npm start
 ```
-3. Install YARN client packages && start server
+3. To init client
 ```sh
 cd client
 yarn
