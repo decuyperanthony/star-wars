@@ -8,7 +8,8 @@
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src=".github/img/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://i.pinimg.com/originals/53/8d/cf/538dcf36d870ccf8853eda04b4461cc6.png" alt="Logo" width="auto" height="150">
+    <!-- <img src=".github/img/logo.png" alt="Logo" width="80" height="80"> -->
   </a>
 
   <h3 align="center">Star wars for FASTORY</h3>
@@ -52,6 +53,7 @@
 ```sh
 npm install npm@latest -g
 ```
+* yarn
 
 ### Installation
 
