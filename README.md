@@ -42,7 +42,11 @@
 * [Material UI](https://material-ui.com/)
 * [Swapi](https://swapi.dev/)
 
+## Demo
+* login : Luke
+* password : DadSucks
 
+* [https://anthonydecuyper-star-wars-fastory.netlify.app/](https://anthonydecuyper-star-wars-fastory.netlify.app/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
